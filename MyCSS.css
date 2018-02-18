@@ -1,27 +1,220 @@
+body {
+    padding-top: 70px;
+}
+
+.news-item {
+    display: block;
+    padding: 8px 0;
+    border: 1px solid whitesmoke;
+    position: relative;
+    margin-bottom: 30px;
+}
+.news-item .tag-img img {
+    max-width: 100%
+}
+.news-item .image {
+    display: block;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    height: 240px;
+    white-space: nowrap;
+}
+.news-item .image:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%}
+
+.news-item .image img {
+    border: none;
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+}
+
+.news-item .title {
+    display: block;
+    font-size: 22px;
+    color: #000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    margin: 8px auto 0;
+    height: 60px;
+    line-height: 30px;
+}
+.news-item .title img {
+    max-height: 20px;
+}
+.news-item p {
+    padding: 5px 0 0;
+    color: #777;
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+}
+
+.price-sale {
+    font-size: 14px;
+    color: #444;
+    font-weight: 700;
+    padding: 5px 0 0;
+    text-align: left;
+}
+.price-sale .price-regular {
+    font-size: 11px;
+    color: #999;
+    text-decoration: line-through;
+    display: block;
+    text-align: left;
+    padding-top: 5px;
+}
+
+.price-sale-box {
+    border: 1px solid #0050a1;
+    color: #000!important;
+    font-weight: 700;
+    margin-top: 5px;
+    padding-bottom: 5px!important;
+    padding-top: 0!important;
+    text-align: center!important;
+}
+.price-sale-box label {
+    background-color: #0050a1;
+    color: #fff;
+    display: block;
+    font-size: 10px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    padding: 5px 7px;
+    position: relative;
+}
+.price-sale-box label:before {
+    content: ' ';
+    border-top: 5px solid transparent;
+    border-left: 5px solid #0050A1;
+    border-bottom: 5px solid transparent;
+    display: none;
+    margin-top: -5px;
+    right: -5px;
+    position: absolute;
+    top: 50%}
+.price-tag-sale-box .tag-label, .price-tag-sale-box .tag-price {
+    display: inherit;
+    font-weight: 400;
+    font-style: italic;
+}
+.price-tag-sale-box {
+    margin-top: 3px;
+}
+.price-tag-sale-box .tag-label {
+    margin-bottom: 2px;
+}
+.price-tag-sale-box .tag-price span {
+    color: #444;
+    font-weight: 700;
+}
+.price-tag-sale-box .red {
+    color: #e82b2b!important;
+}
+.sale-tag-square {
+    background-color: #ff9601;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 5px;
+    margin-top: -2px;
+    padding: 5px;
+    vertical-align: middle;
+}
+.news-item .other {
+    padding: 5px 0 0;
+    text-align: left;
+    font-size: 12px;
+    color: #00b7f1;
+    font-weight: 700;
+}
+.news-item .other.green {
+    color: green;
+}
+.news-item .other.red {
+    color: red;
+}
+.news-item .add-to-cart {
+    font-size: 13px;
+    padding: 5px;
+    outline-color: #ccc;
+    margin: 5px auto 0;
+    width: 100%;
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.news-item .add-to-cart img {
+    display: inline-block;
+    margin-right: 4px;
+}
+.news-item:hover {
+    border: 1px solid orange;
+    -webkit-box-shadow: 0 0 2px #ccc;
+    box-shadow: 0 0 2px #ccc;
+}
+.news-item .add-to-cart {
+    visibility: hidden;
+}
+.news-item:hover .add-to-cart {
+    visibility: visible;
+}
+
+.news-item>div>a {
+    display: block;
+    width: 100%}
+
+.news-item>div>a:hover {
+    color: #00b7f1;
+    text-decoration: none;
+}
+
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     right: 0;
-    background-color: #111;
+    background-color: white;
+    color: darkgreen;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    opacity: 0.92;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    font-size: 22px;
+    color: darkgreen;
     display: block;
-    transition: 0.3s;
+    /*transition: 0.1s;*/
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: white;
+    background-color: black
 }
 
 .sidenav .closebtn {
@@ -35,6 +228,17 @@
 #main {
     transition: margin-left .5s;
     padding: 16px;
+}
+
+.overlay {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
 }
 
 @media screen and (max-height: 450px) {

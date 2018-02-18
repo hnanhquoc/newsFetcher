@@ -96,7 +96,7 @@ class Functions{
 	}	
 	
     function GetItemRss($path){	
-		echo $path;
+		// echo $path;
 		try{
 			$xmlRss = new SimpleXMLElement($path, LIBXML_NOCDATA, true);
 			try{
@@ -113,7 +113,7 @@ class Functions{
 			$pubDatesFile = $xmlFile->xpath("/rss/channel/item/pubDate");
 //			print_r($pubDatesFile);
 			$pubDates = [];
-		echo '1';
+		// echo '1';
 			foreach($pubDatesFile as $pubDateFile){
 				$pubDates[] = Functions::PubDate((string)$pubDateFile);
 			}
@@ -139,7 +139,7 @@ class Functions{
 					continue;
 				}
 			}
-		echo '2';
+		// echo '2';
 			for($i = 0; $i < sizeof($resultsRss); $i++){
 //				print 'test';
 //				if(collator_compare(collator_create('fr_FR.utf8'),(string)$resultsFile[$hang]->title, (string)$resultsRss[$i]->title) === 0){
@@ -152,7 +152,7 @@ class Functions{
 				$item->addChild("link", (string)$resultsRss[$i]->link);
 				$item->addChild("slash:comments", (string)$resultsRss[$i]->comments);			
 			}
-			print 'test';
+			// print 'test';
 			$xmlFile->asXML(Functions::GetRssName($path).".xml");
 		} catch(Exception $e){
 			
